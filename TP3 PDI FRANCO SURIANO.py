@@ -151,12 +151,13 @@ y = np.array([0, 0.05, 0.95, 1])
 p = 1
 alfa = 0
 
-img_rgb = imageio.imread('imageio:chelsea.png')/255
+"""
+img_rgb = imageio.imread('imageio:coffee.png')/255
 img_gray = rgb2yiq(img_rgb)[:,:,0]
 _, axes = plt.subplots(1, 2, figsize=(15,5))
 axes[0].imshow(Lineal(img_rgb,p,alfa,x,y), 'gray', vmin=0, vmax=1)
 plot_hist(Lineal(img_rgb,p,alfa,x,y), 25, axes[1])
-
+"""
 
 """
 img_rgb = imageio.imread('imageio:coffee.png')/255
@@ -173,7 +174,7 @@ plot_hist(img_rgb, 50, axes[1])
 
 # Cargado de datos
 
-img_rgb = imageio.imread('cat 1 (1).jpg')/255
+img_rgb = imageio.imread('imageio:coffee.png')/255
 img_gray = rgb2yiq(img_rgb)[:,:,0]
 img_x = img_gray.copy()
 rows= img_x.shape[0]
@@ -198,8 +199,6 @@ def CalcularPerc(counts,size,bins,pixel):
     aux = aux/size
     #print(aux)
     return aux
-
-img_x = Norm01(img_x)
 
 _, axes = plt.subplots(1, 2, figsize=(15,5))
 counts,bins = plot_hist(img_x, 50,axes[0])
@@ -228,6 +227,7 @@ _, axes = plt.subplots(1, 2, figsize=(15,5))
 axes[0].imshow(img_gray,'gray')
 axes[1].imshow(img_x,'gray')
 plt.show()
+
 
 
 
